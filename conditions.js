@@ -23,45 +23,6 @@ if (myBoolean) {
 	// myOtherBoolean?
 }
 
-/* We can also chain these conditions together to form more
-	complex logic. Maybe we would want to check that a user is
-	both logged in AND has a credit card saved to their account
-	before we let them use 1-Click purchasing (a la Amazon).
-*/
-
-
-// AND operator
-
-if (myBoolean && myOtherBoolean) {
-
-	// This code will only execute if both those conditions
-	// evaluate to 'true'
-	console.log("AND operator example: ", myBoolean && myOtherBoolean);
-
-}
-
-// OR operator
-
-if (myBoolean || myOtherBoolean) {
-
-	// This code will execute if either of these condtions
-	// evaluate to true
-	console.log("OR operator example: ", myBoolean || myOtherBoolean);
-}
-
-// NOT operator
-
-if (!myBoolean) {
-
-	// This code will only execute if myBoolean
-	// evaluates to false. The '!' symbol stands for
-	// "NOT" and essentially reverse the logic
-	console.log("NOT operatory example: ", !myBoolean);
-
-	// !true is false
-	// !false is true
-}
-
 // A more pertinent example:
 
 var loggedIn = false;
@@ -108,4 +69,69 @@ if ((userAge >= 21) && loggedIn) {
 	console.log("You can drink beer AND you're logged in!");
 }
 
-// Questions?
+/* There's another keyword that allows us to have multiple
+	choices of logic to go down depending on what conditions
+	are true or false. It's called 'else' and it looks like this:
+
+if (condition) {
+    block of code to be executed if the condition is true
+} else { 
+    block of code to be executed if the condition is false
+}
+
+*/
+
+// So we can use it to for more complex logic
+
+var time = 20;
+var greeting = "";
+
+if (time < 20) {
+    greeting = "Good day";
+} else {
+    greeting = "Good evening";
+}
+
+// There's another expression that can be used as shorthand to do this.
+// It is known as the ternary operator, or the conditional operator
+
+// broken down, the ternary operator looks like this
+
+// condition ? true statement : false statement;
+
+var age = 17;
+var text = "";
+
+text = (age < 18) ? "Too young" : "Old enough";
+
+// You can combine if and else together to have even more than
+// two choices:
+
+if (time < 10) {
+    greeting = "Good morning";
+} else if (time < 20) {
+    greeting = "Good day";
+} else {
+    greeting = "Good evening";
+}
+
+// There's really no limit to how many "else if" statements
+// you can have:
+
+if (time < 5) {
+    greeting = "Good early morning";
+} else if (time < 10) {
+    greeting = "Good morning";
+} else if (time < 20) {
+    greeting = "Good day";
+} else if (time < 30) {
+    greeting = "Good afternoon";
+} else if (time < 40) {
+    greeting = "Good evening";
+} else {
+    greeting = "Good night";
+}
+
+// There's a better construct for these situations though,
+// called the 'switch' statement. See switches.js for
+// an example.

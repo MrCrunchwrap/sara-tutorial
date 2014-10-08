@@ -40,5 +40,10 @@ person.age = 51; // now the person's age is 51
 
 person.hometown = "Minneapolis";
 
+// We can also add functions to an object. When an object has a function
+// as one of it properties, it's called a method
 
+person.getFullName = function () {
+	return this.firstName + " " + this.lastName;
+}
 
